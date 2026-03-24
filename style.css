@@ -878,6 +878,120 @@ img, video {
   margin-top: 24px;
 }
 
+/* --- Ekslusivitas & Garansi --- */
+.guarantee {
+  background-color: var(--bg-light);
+}
+
+.guarantee .section-title {
+  text-align: left;
+}
+
+.guarantee-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.guarantee-card {
+  background: #FFFFFF;
+  border: 2px solid var(--primary-start);
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 10px 20px rgba(29, 56, 139, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.guarantee-header {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary-start);
+  margin-bottom: 16px;
+}
+
+.capacity-desc {
+  font-size: 1.15rem;
+  color: var(--primary-start);
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.capacity-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.cap-box {
+  width: 64px;
+  height: 64px;
+  border: 2px solid var(--primary-start);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cap-box svg {
+  width: 48px;
+  height: 48px;
+}
+
+.capacity-alert {
+  font-size: 1.15rem;
+  color: var(--primary-start);
+  line-height: 1.4;
+  margin-top: auto;
+}
+
+.badge-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.badge-svg {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 15px 20px rgba(217, 119, 6, 0.25));
+}
+
+.badge-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary-start);
+  line-height: 1.1;
+}
+
+.guarantee-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guarantee-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  color: var(--primary-start);
+  line-height: 1.4;
+}
+
+.guarantee-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary-start);
+  font-size: 1.5rem;
+  line-height: 1;
+  top: -2px;
+}
+
 /* --- FAQ Section --- */
 .faq-container {
   max-width: 800px;
@@ -1084,6 +1198,12 @@ img, video {
   .section { padding: 60px 0; }
   .pricing-grid { grid-template-columns: 1fr; align-items: stretch; }
   .premium-card { padding: 40px; margin-top: 30px; }
+  .guarantee-grid { grid-template-columns: 1fr; }
+  .badge-header { flex-direction: column; text-align: center; }
+  .guarantee-card { padding: 30px 20px; }
+  .badge-svg { width: 120px; height: 120px; }
+  .cap-box { width: 50px; height: 50px; }
+  .cap-box svg { width: 36px; height: 36px; }
   .compare-table th, .compare-table td { padding: 16px 12px; font-size: 0.9rem; }
   .amount { font-size: 2.5rem; }
   .mobile-grow { flex-grow: 1; text-align: center; }
