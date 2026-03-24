@@ -259,18 +259,45 @@ img, video {
   flex-direction: row-reverse;
 }
 
+.msg-icon-wrapper {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 32px;
+  background: linear-gradient(135deg, rgba(29, 56, 139, 0.05), rgba(50, 95, 236, 0.15));
+  border: 1px solid rgba(50, 95, 236, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 35px rgba(29, 56, 139, 0.08), inset 0 0 20px rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.msg-icon-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 60%);
+  opacity: 0.6;
+  transform: rotate(45deg);
+}
+
 .msg-letter {
-  font-size: 8rem;
+  font-size: 5rem;
   font-weight: 800;
   line-height: 1;
   background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  opacity: 0.15;
+  opacity: 1;
+  z-index: 1;
+  filter: drop-shadow(0 4px 10px rgba(29, 56, 139, 0.2));
   user-select: none;
-  width: 150px;
-  text-align: center;
 }
 
 .msg-content h3 {
@@ -352,13 +379,29 @@ img, video {
 }
 
 .path-aha {
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-  /* transition is handled by JS for trigger on scroll */
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
 }
 
 .path-aha.animate {
   animation: drawLine 3s ease forwards;
+}
+
+.aha-curve-dot {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 750px 50px;
+}
+
+.path-aha.animate ~ .aha-curve-dot {
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3s forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes drawLine {
