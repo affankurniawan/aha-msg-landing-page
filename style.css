@@ -654,7 +654,9 @@ img, video {
 }
 
 .komitmen-title {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  text-wrap: balance;
   color: var(--primary-start);
   margin-bottom: 16px;
   font-weight: 800;
@@ -662,7 +664,9 @@ img, video {
 
 .komitmen-desc {
   color: var(--text-dark);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: justify;
 }
 
 .komitmen-desc strong {
@@ -837,7 +841,7 @@ img, video {
 }
 
 .guarantee .section-title {
-  text-align: left;
+  text-align: center;
 }
 
 .guarantee-grid {
@@ -1236,10 +1240,10 @@ img, video {
 }
 
 .hero-title .gradient-text {
-  background: linear-gradient(90deg, #FACC15, #D97706);
+  background: linear-gradient(90deg, #FEF08A, #FACC15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+  filter: drop-shadow(0 4px 12px rgba(250, 204, 21, 0.4));
 }
 
 .hero-subtitle {
