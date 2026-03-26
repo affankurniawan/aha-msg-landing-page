@@ -1,0 +1,2634 @@
+﻿<!-- 
+    =============================================================================
+    AHA MSG - SQUARESPACE FULL CODEBLOCK EXPORT
+    =============================================================================
+    CARA INSTALL DI SQUARESPACE:
+    1. Copy seluruh isi file ini (CTRL+A, CTRL+C)
+    2. Tempelkan ke blok 'Code' (Pilih opsi 'HTML' dan buang centang 'Display Source')
+    3. Pastikan Anda mengunggah ulang file-file video/gambar (seperti Hero.mp4, dll.)
+       ke Squarespace File Manager Anda dan ganti URL 'assets/...' dengan URL Squarespace Anda.
+    =============================================================================
+-->
+
+<style>
+/* --- CSS Variables & Resets --- */
+:root {
+  --primary-start: #1D388B;
+  --primary-end: #325FEC;
+  --text-dark: #0F0E7F;
+  --bg-light: #FFFFFF;
+  --accent-yellow: #F4C144;
+  --text-muted: #64748B;
+  --bg-offset: #F8FAFC;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.3);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Manrope', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-bottom: 90px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800; /* Extra Bold */
+  line-height: 1.2;
+}
+
+p, a, span, div {
+  font-weight: 400; /* Regular */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background-color: var(--accent-yellow);
+  color: var(--text-dark);
+  box-shadow: 0 4px 14px rgba(244, 193, 68, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(244, 193, 68, 0.6);
+  background-color: #FACC15;
+}
+
+.btn-large {
+  padding: 16px 40px;
+  font-size: 1.125rem;
+  border-radius: 12px;
+}
+
+.btn-sm {
+  padding: 8px 16px;
+  font-size: 0.875rem;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.fw-regular {
+  font-weight: 400 !important;
+}
+
+.fw-800 {
+  font-weight: 800 !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+/* --- Hero Section (Split Layout) --- */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 80px); /* Adjust if needed */
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  background-color: var(--bg-light);
+  overflow: hidden;
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-text-content {
+  color: var(--text-dark);
+}
+
+.hero-eyebrow {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero-title {
+  font-size: 2.7rem;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  text-shadow: none;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: none;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  text-shadow: none;
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+}
+
+.video-container {
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(15, 14, 127, 0.15);
+  background: #000;
+}
+
+.inline-video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Sections Common --- */
+.section {
+  padding: 100px 0;
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.section-desc {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+}
+
+.bg-light-blue {
+  background-color: var(--bg-offset);
+}
+
+/* --- Dark Section Theme (Cinematic Mode) --- */
+.bg-navy {
+  background-color: var(--primary-start);
+  background-image: 
+    radial-gradient(circle at top right, rgba(250, 204, 21, 0.05), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(50, 95, 236, 0.15), transparent 40%);
+  color: #F8FAFC !important;
+}
+
+.bg-navy h1, .bg-navy h2, .bg-navy h3, .bg-navy h4,
+.bg-navy .section-title,
+.bg-navy .msg-card-title,
+.bg-navy .eko-item .text,
+.bg-navy .amount,
+.bg-navy .currency,
+.bg-navy .tier-name {
+  color: #FFFFFF !important;
+}
+
+.bg-navy p,
+.bg-navy .section-desc,
+.bg-navy .msg-card-desc,
+.bg-navy .eko-desc,
+.bg-navy .features li,
+.bg-navy .ori-amount,
+.bg-navy .period,
+.bg-navy .price-sub,
+.bg-navy .ribbon {
+  color: #E2E8F0 !important;
+}
+
+.bg-navy .features li::before {
+  color: #FACC15 !important;
+}
+
+.bg-navy .msg-card,
+.bg-navy .eko-item,
+.bg-navy .pricing-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bg-navy .premium-card {
+  background: rgba(15, 14, 127, 0.4) !important;
+  border: 2px solid #FACC15 !important;
+  box-shadow: 0 10px 40px rgba(250, 204, 21, 0.15);
+}
+
+.bg-navy .pricing-card .btn-outline {
+  color: #FACC15 !important;
+  border-color: #FACC15 !important;
+}
+
+.bg-navy .pricing-card .btn-outline:hover {
+  background: #FACC15 !important;
+  color: var(--primary-start) !important;
+}
+
+/* --- Problem Section (Labirin Algoritma) --- */
+.problem-header {
+  margin-bottom: 40px;
+}
+
+.problem-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-start);
+  font-weight: 800;
+}
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.problem-card {
+  background: linear-gradient(145deg, #ffffff, #f4f7f6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    10px 10px 20px rgba(15, 14, 127, 0.05),
+    -10px -10px 20px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 5px rgba(29, 56, 139, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  position: relative;
+}
+
+.problem-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FACC15, #D97706);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    15px 15px 30px rgba(15, 14, 127, 0.1),
+    -10px -10px 20px rgba(255, 255, 255, 1);
+}
+
+.problem-card:hover::before {
+  opacity: 1;
+}
+
+.card-img-box {
+  background: transparent;
+  margin: 32px 24px 16px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-3d-wrapper {
+  width: 90px;
+  height: 90px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #F8FAFC, #E2E8F0);
+  box-shadow: 
+    8px 8px 16px rgba(15, 14, 127, 0.08),
+    -8px -8px 16px rgba(255, 255, 255, 1),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.8),
+    inset -1px -1px 2px rgba(29, 56, 139, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transform: perspective(400px) rotateX(15deg) rotateY(-15deg);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease;
+}
+
+.icon-3d-wrapper svg {
+  filter: drop-shadow(0 10px 15px rgba(29, 56, 139, 0.3));
+  transform: translateZ(30px);
+}
+
+.problem-card:hover .icon-3d-wrapper {
+  transform: perspective(400px) rotateX(0deg) rotateY(0deg) translateY(-5px);
+  box-shadow: 
+    12px 12px 20px rgba(15, 14, 127, 0.12),
+    -12px -12px 20px rgba(255, 255, 255, 1),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.problem-card .card-content {
+  padding: 0 24px 32px;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.problem-card .card-title {
+  font-size: 1.25rem;
+  color: var(--primary-start);
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.problem-card .card-desc {
+  color: var(--primary-start);
+  opacity: 0.8;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.problem-banner {
+  margin-top: 60px;
+  position: relative;
+  padding: 2px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--primary-start) 30%, #FACC15);
+  box-shadow: 0 10px 25px rgba(29, 56, 139, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-banner:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(29, 56, 139, 0.15);
+}
+
+.banner-glass {
+  background: var(--bg-light);
+  border-radius: 10px;
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: left;
+}
+
+.banner-glass p {
+  margin: 0;
+  font-size: 1.15rem;
+  color: var(--primary-start);
+  font-weight: 500;
+}
+
+.banner-glass strong {
+  font-weight: 800;
+}
+
+.banner-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0 4px 6px rgba(217, 119, 6, 0.25));
+}
+
+/* --- Framework Solusi (Metode MSG) --- */
+.msg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.msg-card {
+  background: var(--bg-light);
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(15, 14, 127, 0.05);
+  border: 1px solid rgba(29, 56, 139, 0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.msg-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(15, 14, 127, 0.1);
+  border-color: var(--primary-start);
+}
+
+.film-frame {
+  background: #F8FAFC; 
+  border-left: 16px solid #1A202C;
+  border-right: 16px solid #1A202C;
+  border-top: 10px solid #1A202C;
+  position: relative;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Creating the sprocket holes with a repeating radial gradient! */
+.film-frame::before, .film-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 16px;
+  background-image: repeating-radial-gradient(circle at center, #FFFFFF 0, #FFFFFF 4px, transparent 4.5px, transparent 100%);
+  background-size: 100% 24px;
+  background-position: center;
+}
+
+.film-frame::before { left: -16px; }
+.film-frame::after { right: -16px; }
+
+.film-svg-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 15px 15px rgba(29, 56, 139, 0.25));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), filter 0.4s ease;
+}
+
+.msg-card:hover .film-svg-icon {
+  transform: translateY(-8px) scale(1.1);
+  filter: drop-shadow(0 20px 25px rgba(29, 56, 139, 0.4));
+}
+
+.msg-text {
+  padding: 32px 24px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  border-top: 10px solid #1A202C;
+}
+
+.msg-text h3 {
+  color: var(--primary-start);
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.msg-text p {
+  color: var(--primary-start);
+  font-size: 1rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* --- Ekosistem Section --- */
+.ekosistem {
+  background-color: var(--bg-light);
+}
+
+.eko-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.eko-item {
+  text-align: center;
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+}
+
+.eko-circle {
+  width: 220px;
+  height: 220px;
+  margin: 0 auto 32px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(145deg, #ffffff, #f4f7f6);
+  z-index: 1;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.eko-circle::before {
+  content: '';
+  position: absolute;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FACC15, #D97706);
+  z-index: -1;
+  box-shadow: 0 15px 35px rgba(217, 119, 6, 0.2);
+  transition: all 0.5s ease;
+}
+
+.eko-circle-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #ffffff, #f4f7f6);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    inset 2px 2px 10px rgba(255, 255, 255, 1), 
+    inset -2px -2px 10px rgba(15, 14, 127, 0.05);
+}
+
+.eko-circle:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.eko-circle:hover::before {
+  background: linear-gradient(135deg, #325FEC, #1D388B);
+  box-shadow: 0 20px 40px rgba(29, 56, 139, 0.3);
+  transform: rotate(180deg);
+}
+
+.eko-circle .icon {
+  margin-bottom: 16px;
+  filter: drop-shadow(0 10px 15px rgba(29, 56, 139, 0.25));
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.eko-circle:hover .icon {
+  transform: translateY(-8px) scale(1.05);
+}
+
+.eko-circle .text {
+  font-weight: 800;
+  color: var(--primary-start);
+  font-size: 1.15rem;
+  padding: 0 24px;
+  line-height: 1.3;
+}
+
+.eko-desc {
+  font-weight: 600;
+  color: var(--primary-start);
+  font-size: 1.125rem;
+}
+
+/* --- Brand Benefits Section --- */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.benefit-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px;
+  padding: 40px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(250, 204, 21, 0.5) !important;
+  box-shadow: 0 15px 40px rgba(15, 14, 127, 0.4), inset 0 0 20px rgba(250, 204, 21, 0.05);
+}
+
+.benefit-icon {
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.benefit-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF !important;
+  margin-bottom: 12px;
+}
+
+.benefit-desc {
+  color: #E2E8F0 !important;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* --- Galeri Karya Cinematic Section --- */
+.portfolio {
+  padding: 80px 0;
+  background: var(--bg-light);
+}
+
+.portfolio-carousel-wrapper {
+  position: relative;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.portfolio-track {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 24px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar Firefox */
+}
+
+.portfolio-track::-webkit-scrollbar {
+  display: none; /* Hide Chrome */
+}
+
+.video-card {
+  flex: 0 0 calc(33.333% - 20px);
+  scroll-snap-align: start;
+  background: #FFFFFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 14, 127, 0.05);
+  border: 1px solid rgba(29, 56, 139, 0.05);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-btn {
+  background: #FFFFFF;
+  border: 1px solid rgba(29, 56, 139, 0.1);
+  color: var(--primary-start);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  box-shadow: 0 10px 20px rgba(15, 14, 127, 0.1);
+  transition: all 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: var(--primary-start);
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: -24px; }
+.next-btn { right: -24px; }
+
+.video-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(29, 56, 139, 0.15);
+}
+
+.video-frame {
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-info {
+  padding: 24px;
+  background: #FFFFFF;
+  flex-grow: 1;
+}
+
+.video-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.video-brand {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* --- Tabel Disrupsi --- */
+.table-container {
+  overflow-x: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(15, 14, 127, 0.08);
+  background: var(--bg-light);
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.compare-table th, .compare-table td {
+  padding: 24px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.compare-table th {
+  font-size: 1.125rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  background: #F1F5F9;
+}
+
+.compare-table td:first-child {
+  font-weight: 600;
+  color: var(--text-dark);
+  width: 25%;
+}
+
+.col-traditional {
+  color: var(--text-muted);
+  width: 35%;
+}
+
+.col-aha {
+  background: var(--primary-start);
+  font-weight: 600;
+  color: var(--bg-light);
+  width: 40%;
+  box-shadow: 0 0 20px rgba(29, 56, 139, 0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.compare-table td.col-aha {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.compare-table th.col-aha {
+  background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+  color: var(--accent-yellow);
+  position: relative;
+  font-size: 1.25rem;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  border-bottom: none;
+}
+
+/* Add a gold top border highlight to the header */
+.compare-table th.col-aha::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #FACC15, #D97706);
+}
+
+/* --- The AHA Curve & Komitmen --- */
+.curve-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.chart-container {
+  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+  border-radius: 32px;
+  padding: 40px;
+  box-shadow: 0 40px 80px rgba(15, 14, 127, 0.08), inset 0 2px 0 #ffffff, inset 0 -2px 0 rgba(226, 232, 240, 0.5);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.commitment-box {
+  background: var(--bg-light);
+  border: 2px solid var(--primary-start);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(29, 56, 139, 0.1);
+}
+
+.komitmen-title {
+  font-size: 1.35rem;
+  line-height: 1.35;
+  text-wrap: balance;
+  color: var(--primary-start);
+  margin-bottom: 16px;
+  font-weight: 800;
+}
+
+.komitmen-desc {
+  color: var(--text-dark);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.komitmen-desc strong {
+  color: var(--primary-start);
+  font-weight: 800;
+}
+
+.aha-curve-svg {
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+}
+
+.path-aha {
+  stroke-dasharray: 2500;
+  stroke-dashoffset: 2500;
+}
+
+.path-aha.animate {
+  animation: drawLine 3s ease forwards;
+}
+
+.aha-curve-dot {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: 750px 50px;
+}
+
+.path-aha.animate ~ .aha-curve-dot {
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 3s forwards;
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* --- Pricing Section --- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.pricing-card {
+  background: var(--bg-light);
+  border: 1px solid rgba(29, 56, 139, 0.2);
+  border-radius: 16px;
+  padding: 40px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(15, 14, 127, 0.05);
+  transition: var(--transition);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(15, 14, 127, 0.1);
+}
+
+.premium-card {
+  border: 2px solid var(--primary-start);
+  box-shadow: 0 10px 30px rgba(29, 56, 139, 0.15);
+  padding: 50px 40px; /* slightly taller */
+}
+
+.ribbon-wrapper {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+
+.ribbon {
+  display: inline-block;
+  background: linear-gradient(90deg, #FACC15, #D97706);
+  color: var(--text-dark);
+  font-weight: 800;
+  padding: 8px 24px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(217, 119, 6, 0.3);
+}
+
+.tier-name {
+  font-size: 1.5rem;
+  color: var(--primary-start);
+  margin-bottom: 24px;
+}
+
+.price {
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.currency {
+  font-size: 1.25rem;
+  font-weight: 800;
+  vertical-align: top;
+  color: var(--primary-start);
+  margin-right: 2px;
+}
+
+.amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.period {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.price-sub {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.price-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(29, 56, 139, 0.2);
+  margin-bottom: 24px;
+}
+
+.features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.features li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+}
+
+.features li::before {
+  content: 'â€¢';
+  color: var(--primary-start);
+  font-weight: 800;
+  position: absolute;
+  left: 0;
+}
+
+.save-banner {
+  background: linear-gradient(90deg, #FACC15, #D97706);
+  color: var(--text-dark);
+  font-weight: 800;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 24px;
+}
+
+/* --- Ekslusivitas & Garansi --- */
+.guarantee { position: relative; overflow: hidden; color: #FFFFFF; }
+.guarantee-bg-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.guarantee-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 14, 127, 0.85); z-index: 1; }
+.guarantee .container { position: relative; z-index: 2; }
+.guarantee .section-title { text-align: center; color: #FFFFFF; }
+.guarantee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.guarantee-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 40px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; }
+
+.capacity-card {
+  justify-content: center;
+}
+
+.guarantee-header {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+}
+
+.capacity-desc {
+  font-size: 1.15rem;
+  color: #E2E8F0;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.capacity-desc strong {
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.capacity-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cap-box {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cap-box svg {
+  width: 48px;
+  height: 48px;
+}
+
+.capacity-alert {
+  font-size: 1.15rem;
+  color: var(--primary-start);
+  line-height: 1.4;
+  margin-top: auto;
+}
+
+.badge-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.guarantee-badge-card:hover .badge-svg {
+  transform: translateY(-8px) scale(1.05);
+  filter: drop-shadow(0 20px 30px rgba(217, 119, 6, 0.4));
+}
+
+.guarantee-badge-card:hover .spin-slow {
+  animation: spin 3s linear infinite;
+}
+
+.badge-svg {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 15px 20px rgba(217, 119, 6, 0.25));
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.premium-badge-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.spin-slow {
+  animation: spin 15s linear infinite;
+  transform-origin: 80px 80px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.badge-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.1;
+}
+
+.guarantee-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.guarantee-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+  color: #E2E8F0;
+  line-height: 1.4;
+}
+
+.guarantee-list li::before {
+  content: '\2714';
+  position: absolute;
+  left: 0;
+  color: var(--accent-yellow);
+  font-size: 1.2rem;
+  top: 0px;
+}
+
+/* --- Pre-FAQ Engagement Banner --- */
+.pre-faq-banner {
+  padding: 40px 0 80px 0;
+}
+
+.engagement-strip {
+  display: flex;
+  background: var(--bg-light);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(29, 56, 139, 0.08);
+  border: 1px solid rgba(29, 56, 139, 0.1);
+}
+
+.strip-image {
+  flex: 1.2;
+  min-height: 400px;
+  background: url('assets/atensi_blue.png') center/cover no-repeat;
+  position: relative;
+}
+
+/* Subtle overlay on image to blend it slightly */
+.strip-image::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.1), transparent);
+}
+
+.strip-content {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.strip-content h2 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--primary-start);
+  line-height: 1.05;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+
+.strip-content p {
+  font-size: 1.25rem;
+  color: var(--primary-start);
+  font-weight: 600;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* --- FAQ Section --- */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--bg-light);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover, .faq-item.active {
+  background: linear-gradient(135deg, var(--primary-start), var(--primary-end));
+  border-color: transparent;
+  box-shadow: 0 10px 20px rgba(15, 14, 127, 0.15);
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 24px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover .faq-question, .faq-item.active .faq-question {
+  color: #FFFFFF;
+}
+
+.faq-question .icon {
+  font-size: 1.5rem;
+  font-weight: 400;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item:hover .faq-question .icon, .faq-item.active .faq-question .icon {
+  color: var(--accent-yellow);
+}
+
+.faq-item.active .faq-question {
+  padding-bottom: 12px;
+}
+
+.faq-item.active .icon {
+  transform: rotate(45deg); /* Turns '+' into 'x' */
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+  padding: 0 24px 24px 24px;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+}
+
+.faq-item:hover .faq-answer p, .faq-item.active .faq-answer p {
+  color: #E2E8F0;
+}
+
+/* --- Sticky Footer --- */
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-light);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  padding: 16px 0;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.sticky-footer.visible {
+  transform: translateY(0);
+}
+
+.sticky-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.capacity-tracker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--primary-start);
+}
+
+.pulse-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #FACC15; /* Brand Gold */
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px solid #FACC15;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.progress-bar-container {
+  width: 140px;
+  height: 16px;
+  background: #CBD5E1;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 3px 6px rgba(15, 23, 42, 0.3), 0 1px 0 rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 16px;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #FACC15, #F59E0B);
+  border-radius: 12px;
+  position: relative;
+  box-shadow: inset 0 -2px 4px rgba(217, 119, 6, 0.8), inset 0 2px 4px rgba(255, 255, 255, 0.6), 0 0 15px rgba(250, 204, 21, 0.6);
+}
+
+/* 3D Glass Reflection Highlight */
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent);
+  border-radius: 12px 12px 0 0;
+}
+
+.spots-left {
+  font-weight: 800;
+  color: #D97706; /* Dark Gold */
+  text-shadow: 0 0 12px rgba(250, 204, 21, 0.4);
+  letter-spacing: -0.01em;
+}
+
+.ownership-guarantee {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  background: rgba(29, 56, 139, 0.08); /* Pale Brand Blue */
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--primary-start); /* Dark Brand Blue */
+}
+
+/* --- Micro-Animations (Scroll Reveal) --- */
+.reveal-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal-active {
+  opacity: 1;
+  transform: translate(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .hero-split { grid-template-columns: 1fr; text-align: center; }
+  .hero-title { font-size: 2.5rem; }
+  .curve-split { grid-template-columns: 1fr; }
+  .msg-grid { grid-template-columns: repeat(2, 1fr); }
+  .sticky-container { flex-wrap: wrap; justify-content: center; }
+  .hide-mobile { display: none !important; }
+  .portfolio-track { gap: 20px; }
+  .video-card { flex: 0 0 calc(50% - 10px); }
+  .prev-btn { left: 0; }
+  .next-btn { right: 0; }
+}
+
+@media (max-width: 768px) {
+  body { padding-bottom: 160px; }
+  .hero-title { font-size: 2rem; }
+  .hero-subtitle { font-size: 1.05rem; }
+  .problem-grid, .msg-grid, .benefits-grid { grid-template-columns: 1fr; }
+  .video-card { flex: 0 0 100%; }
+  .carousel-btn { display: none; } /* Hide arrows on mobile, rely on swipe */
+  .benefit-card { padding: 30px 24px; }
+  .banner-glass { flex-direction: column; text-align: center; gap: 16px; padding: 24px; }
+  .engagement-strip { flex-direction: column; }
+  .strip-image { min-height: 250px; }
+  .strip-content { padding: 40px 24px; text-align: center; }
+  .strip-content h2 { font-size: 2.8rem; }
+  .section { padding: 60px 0; }
+  .pricing-grid { grid-template-columns: 1fr; align-items: stretch; }
+  .premium-card { padding: 40px; margin-top: 30px; }
+  .guarantee-grid { grid-template-columns: 1fr; }
+  .badge-header { flex-direction: column; text-align: center; }
+  .guarantee-card { padding: 30px 20px; }
+  .badge-svg { width: 120px; height: 120px; }
+  .cap-box {
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+  .faq-question { padding: 20px; font-size: 1rem; }
+  .faq-answer p { padding: 0 20px 20px 20px; }
+}
+
+/* --- Hero Video Background Overrides --- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 2;
+  background: radial-gradient(circle at 70% 30%, rgba(50, 95, 236, 0.15) 0%, transparent 60%),
+              radial-gradient(circle at 30% 70%, rgba(217, 119, 6, 0.1) 0%, transparent 60%);
+}
+
+.hero-bg-video {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(15, 14, 127, 0.95) 0%, rgba(15, 14, 127, 0.5) 100%);
+  z-index: 1;
+}
+
+
+/* --- Teks & Z-Index Hero Overrides --- */
+.hero-split {
+  position: relative;
+  z-index: 10;
+}
+
+.hero-title {
+  color: #FFFFFF !important;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero-title .gradient-text {
+  background: linear-gradient(90deg, #FEF08A, #FACC15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(1px 1px 0px #D97706) drop-shadow(2px 2px 0px #B45309) drop-shadow(3px 3px 0px #92400E) drop-shadow(5px 10px 15px rgba(0, 0, 0, 0.6));
+}
+
+.hero-subtitle {
+  color: #F8FAFC !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-eyebrow {
+  color: #FACC15 !important;
+}
+
+
+
+
+
+
+.final-cta-heading {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 800;
+  color: var(--primary-start);
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 24px;
+}
+
+.final-cta-subheading {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-weight: 600;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.cta-button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+
+
+
+
+
+
+</style>
+
+
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section (Redesigned matching wireframe: Split Layout) -->
+        <section class="hero" id="home">
+            <video autoplay loop muted playsinline class="hero-bg-video">
+                <source src="assets/hero4.mp4" type="video/mp4">
+            </video>
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-bg"></div>
+            <div class="container hero-split">
+                <div class="hero-text-content reveal-text">
+                    <h1 class="hero-title fw-regular">
+                        Bangun Eksistensi Brand yang Tak Terlupakan dengan
+                        <strong class="gradient-text fw-800">Cinematic Masterpiece AI 4K</strong>
+                    </h1>
+                    <p class="hero-subtitle delay-1">
+                        Berhenti mengejar algoritma sesaat. Saatnya menanamkan narasi brand di bawah alam sadar audiens dengan standar literasi visual tertinggi.
+                    </p>
+                    <div class="hero-actions delay-2">
+                        <a href="#konsultasi" class="btn btn-primary btn-large">Konsultasi Strategi Visual Gratis</a>
+                    </div>
+                </div>
+                <div class="hero-visual reveal-left delay-1">
+                    <div class="video-container">
+                        <video autoplay loop muted playsinline style="width: 100%; border-radius: 24px; display: block; box-shadow: 0 20px 40px rgba(15, 14, 127, 0.15);">
+                            <source src="assets/Hero.mp4" type="video/mp4">
+                            Browser Anda tidak mendukung tag video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Narrative Flow: Masalah -->
+        <section class="section problem" id="masalah">
+            <div class="container">
+                <div class="problem-header reveal-up">
+                    <h2 class="problem-title text-center">Masihkah Anda Terjebak dalam Lingkaran Algoritma 'FYP' yang Melelahkan?</h2>
+                </div>
+                
+                <div class="problem-grid reveal-up delay-1">
+                    <!-- Kartu 1 -->
+                    <div class="problem-card">
+                        <div class="card-img-box">
+                            <div class="icon-3d-wrapper">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Kuantitas/Spam Overlapping Feed Cards -->
+                                    <defs>
+                                        <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FACC15"/><stop offset="1" stop-color="#D97706"/>
+                                        </linearGradient>
+                                        <linearGradient id="blueGradLight" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#325FEC"/><stop offset="1" stop-color="#1D388B"/>
+                                        </linearGradient>
+                                        <linearGradient id="blueGradDark" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#1D388B"/><stop offset="1" stop-color="#0F0E7F"/>
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Back Card -->
+                                    <rect x="32" y="10" width="24" height="28" rx="3" fill="url(#blueGradDark)" stroke="#1D388B" stroke-width="1.5" opacity="0.4"/>
+                                    
+                                    <!-- Middle Card -->
+                                    <rect x="22" y="18" width="24" height="28" rx="3" fill="url(#blueGradLight)" stroke="#1D388B" stroke-width="1.5" opacity="0.7"/>
+                                    
+                                    <!-- Front Card -->
+                                    <rect x="12" y="26" width="24" height="28" rx="3" fill="#F8FAFC" stroke="#1D388B" stroke-width="2"/>
+                                    
+                                    <!-- Front Card Image Block -->
+                                    <rect x="16" y="30" width="16" height="12" rx="2" fill="url(#goldGrad)"/>
+                                    
+                                    <!-- Front Card Text Lines -->
+                                    <line x1="16" y1="46" x2="32" y2="46" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="16" y1="50" x2="26" y2="50" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Kuantitas Tanpa Makna</h3>
+                            <p class="card-desc">Tekanan untuk terus memproduksi konten hambar hanya demi mengisi feed (Spam)</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Kartu 2 -->
+                    <div class="problem-card">
+                        <div class="card-img-box">
+                            <div class="icon-3d-wrapper">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="goldGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FACC15"/>
+                                            <stop offset="1" stop-color="#D97706"/>
+                                        </linearGradient>
+                                        <linearGradient id="blueGradLight" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#325FEC"/>
+                                            <stop offset="1" stop-color="#1D388B"/>
+                                        </linearGradient>
+                                        <linearGradient id="blueGradDark" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#1D388B"/>
+                                            <stop offset="1" stop-color="#0F0E7F"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <rect x="20" y="8" width="24" height="48" rx="4" fill="url(#blueGradLight)" stroke="#1D388B" stroke-width="3"/>
+                                    <rect x="23" y="11" width="18" height="42" rx="2" fill="#0F0E7F"/>
+                                    <!-- Crack line -->
+                                    <path d="M26 11L33 25L28 32L38 43L35 53" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <!-- Spark -->
+                                    <path d="M44 32L36 28L38 20L30 24" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Sensasi Murahan</h3>
+                            <p class="card-desc">Mengorbankan Brand demi mengikuti tren cringe yang dipaksakan</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Kartu 3 -->
+                    <div class="problem-card">
+                        <div class="card-img-box">
+                            <div class="icon-3d-wrapper">
+                                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Falling Content Post (Disposable Content) -->
+                                    <g transform="translate(32, 16) rotate(15) translate(-32, -16)">
+                                        <rect x="22" y="0" width="20" height="24" rx="2" fill="#F8FAFC" stroke="#1D388B" stroke-width="2"/>
+                                        <rect x="26" y="4" width="12" height="10" rx="1" fill="url(#goldGrad)"/>
+                                        <line x1="26" y1="18" x2="38" y2="18" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    </g>
+
+                                    <!-- Falling motion trails -->
+                                    <line x1="42" y1="4" x2="42" y2="12" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="20" y1="8" x2="20" y2="16" stroke="#94A3B8" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="36" y1="2" x2="36" y2="6" stroke="#FACC15" stroke-width="2" stroke-linecap="round"/>
+
+                                    <!-- Premium 3D Trash Can Body -->
+                                    <path d="M22 30 L26 56 C26 59, 38 59, 38 56 L42 30 Z" fill="url(#blueGradLight)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    
+                                    <!-- Trash Can Top Opening Rim (Darker blue inside) -->
+                                    <ellipse cx="32" cy="30" rx="10" ry="4" fill="url(#blueGradDark)" stroke="#1D388B" stroke-width="2"/>
+                                    
+                                    <!-- Bouncing Gold Lid -->
+                                    <g transform="translate(14, 20) rotate(-20) translate(-14, -20)">
+                                        <ellipse cx="24" cy="18" rx="12" ry="3" fill="url(#goldGrad)" stroke="#1D388B" stroke-width="2"/>
+                                        <!-- Lid Handle arc -->
+                                        <path d="M20 18 Q24 10 28 18" fill="none" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    </g>
+                                    
+                                    <!-- Trash Can Vertical Ribs Overlay -->
+                                    <path d="M28 36 Q30 46 30 52" fill="none" stroke="#F8FAFC" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+                                    <path d="M36 36 Q34 46 34 52" fill="none" stroke="#F8FAFC" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3 class="card-title">Cepat Dilupakan</h3>
+                            <p class="card-desc">Konten sekali pakai yang gagal membangun ingatan jangka panjang di benak audiens</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Banner -->
+                <div class="problem-banner reveal-up delay-2">
+                    <div class="banner-glass">
+                        <span class="banner-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L1 21H23L12 2Z" fill="#FACC15" stroke="#D97706" stroke-width="1.5" stroke-linejoin="round"/>
+                                <path d="M13 18H11V16H13V18ZM13 14H11V10H13V14Z" fill="#1D388B"/>
+                            </svg>
+                        </span>
+                        <p>Memaksa audiens dengan konten konyol <strong>tidak akan membangun loyalitas.</strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Framework Solusi: Metode MSG -->
+        <section class="section solution bg-navy" id="solusi">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">AHA MSG: Memasuki Era Standard Baru Literasi Visual Masa Depan</h2>
+                    <p class="section-desc">Berhenti mengejar algoritma sesaat, Saatnya menanamkan eksistensi brand di bawah alam sadar audiens melalui standard visual iklan berkelas.</p>
+                </div>
+                
+                <div class="msg-grid reveal-up delay-1">
+                    <div class="msg-card">
+                        <div class="film-frame">
+                            <span class="film-svg-icon">
+                                <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="msgGold" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FACC15"/><stop offset="1" stop-color="#D97706"/>
+                                        </linearGradient>
+                                        <linearGradient id="msgBlue" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#325FEC"/><stop offset="1" stop-color="#1D388B"/>
+                                        </linearGradient>
+                                        <linearGradient id="msgDark" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#1D388B"/><stop offset="1" stop-color="#0F0E7F"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <!-- 3D Stopwatch/Time Management Icon -->
+                                    <circle cx="32" cy="36" r="24" fill="url(#msgDark)" opacity="0.4"/>
+                                    <!-- Top Ring & Top Button -->
+                                    <circle cx="32" cy="6" r="5" fill="none" stroke="#1D388B" stroke-width="2.5"/>
+                                    <rect x="28" y="10" width="8" height="6" rx="1.5" fill="url(#msgGold)" stroke="#1D388B" stroke-width="2"/>
+                                    <!-- Angled Side Buttons -->
+                                    <path d="M16 20L22 26" stroke="url(#msgGold)" stroke-width="3" stroke-linecap="round"/>
+                                    <circle cx="15" cy="19" r="3.5" fill="#1D388B"/>
+                                    <path d="M48 20L42 26" stroke="url(#msgGold)" stroke-width="3" stroke-linecap="round"/>
+                                    <circle cx="49" cy="19" r="3.5" fill="#1D388B"/>
+                                    <!-- Main Body -->
+                                    <circle cx="32" cy="36" r="22" fill="url(#msgBlue)" stroke="#1D388B" stroke-width="2"/>
+                                    <!-- Clock Face -->
+                                    <circle cx="32" cy="36" r="16" fill="#F8FAFC" stroke="#1D388B" stroke-width="1.5"/>
+                                    <!-- Aesthetic Inner Ring -->
+                                    <circle cx="32" cy="36" r="12" fill="none" stroke="#E2E8F0" stroke-width="1.5"/>
+                                    <!-- Tick Marks -->
+                                    <line x1="32" y1="22" x2="32" y2="26" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="32" y1="46" x2="32" y2="50" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="22" y1="36" x2="26" y2="36" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="46" y1="36" x2="50" y2="36" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <!-- Hands -->
+                                    <path d="M32 36L32 25" stroke="url(#msgGold)" stroke-width="3" stroke-linecap="round"/>
+                                    <path d="M32 36L40 40" stroke="#1D388B" stroke-width="3" stroke-linecap="round"/>
+                                    <!-- Center Dot -->
+                                    <circle cx="32" cy="36" r="4" fill="url(#msgGold)" stroke="#1D388B" stroke-width="1.5"/>
+                                    
+                                    <!-- Floating Sparkles -->
+                                    <circle cx="56" cy="18" r="4" fill="url(#msgGold)"/>
+                                    <circle cx="10" cy="50" r="3" fill="url(#msgGold)"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="msg-text">
+                            <h3>M - Memorable</h3>
+                            <p>Menciptakan Cinematic Masterpiece AI 4K yang membekas jangka panjang di memori.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="msg-card">
+                        <div class="film-frame">
+                            <span class="film-svg-icon">
+                                <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Book -->
+                                    <path d="M32 16L56 12V44L32 48Z" fill="url(#msgBlue)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M32 16L8 12V44L32 48Z" fill="url(#msgDark)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M32 16L52 14V42L32 46Z" fill="#F8FAFC" stroke="#1D388B" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <path d="M32 16L12 14V42L32 46Z" fill="#E2E8F0" stroke="#1D388B" stroke-width="1.5" stroke-linejoin="round"/>
+                                    <line x1="16" y1="20" x2="28" y2="22" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="16" y1="28" x2="26" y2="30" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <line x1="36" y1="22" x2="48" y2="20" stroke="#1D388B" stroke-width="2" stroke-linecap="round"/>
+                                    <!-- Clapper -->
+                                    <path d="M38 38L56 34V52L38 56V38Z" fill="url(#msgDark)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M36 34L54 28" stroke="url(#msgGold)" stroke-width="4" stroke-linecap="round"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="msg-text">
+                            <h3>S - Storytelling</h3>
+                            <p>Membangun Arc emosional; Mengubah iklan kaku menjadi pengalaman manusiawi yang menyentuh hati.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="msg-card">
+                        <div class="film-frame">
+                            <span class="film-svg-icon">
+                                <svg width="80" height="80" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 50H56V56H8V50Z" fill="url(#msgDark)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M14 40H22V50H14V40Z" fill="url(#msgBlue)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M28 26H36V50H28V26Z" fill="url(#msgBlue)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M42 12H50V50H42V12Z" fill="url(#msgGold)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M10 42L26 26L36 32L54 10" stroke="url(#msgGold)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <polygon points="58,6 46,10 56,18" fill="url(#msgGold)"/>
+                                </svg>
+                            </span>
+                        </div>
+                        <div class="msg-text">
+                            <h3>G - Growth</h3>
+                            <p>Memastikan pesan Brand tumbuh - Mengubah atensi menjadi loyalitas jangka panjang.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ekosistem Cinematic Masterpiece -->
+        <section class="section ekosistem" id="ekosistem">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Ekosistem Cinematic Masterpiece</h2>
+                    <p class="section-desc">Sinergi antara aset visual, manajemen iklan, dan retensi audiens.</p>
+                </div>
+                
+                <div class="eko-grid reveal-up delay-1">
+                    <!-- SVG Defs for 3D Icon colors -->
+                    <svg width="0" height="0" style="position: absolute;">
+                        <defs>
+                            <linearGradient id="ekoGold" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#FACC15"/>
+                                <stop offset="1" stop-color="#D97706"/>
+                            </linearGradient>
+                            <linearGradient id="ekoBlue" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#325FEC"/>
+                                <stop offset="1" stop-color="#1D388B"/>
+                            </linearGradient>
+                            <linearGradient id="ekoDark" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#1D388B"/>
+                                <stop offset="1" stop-color="#0F0E7F"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+
+                    <!-- Item 1: Video -->
+                    <div class="eko-item eko-1">
+                        <div class="eko-circle">
+                            <div class="eko-circle-inner">
+                                <span class="icon">
+                                    <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="8" y="28" width="48" height="28" rx="4" fill="url(#ekoBlue)" stroke="#1D388B" stroke-width="2"/>
+                                        <rect x="12" y="32" width="40" height="20" rx="2" fill="#0F0E7F"/>
+                                        <path d="M8 24L52 12V20L8 32V24Z" fill="url(#ekoGold)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                        <path d="M16 22L24 20" stroke="#1D388B" stroke-width="3"/>
+                                        <path d="M28 18L36 16" stroke="#1D388B" stroke-width="3"/>
+                                        <path d="M40 15L48 13" stroke="#1D388B" stroke-width="3"/>
+                                        <circle cx="32" cy="42" r="6" fill="url(#ekoGold)"/>
+                                    </svg>
+                                </span>
+                                <span class="text">AI 4K Cinematic Video</span>
+                            </div>
+                        </div>
+                        <p class="eko-desc">Menghidupkan Storytelling</p>
+                    </div>
+                    
+                    <!-- Item 2: Meta Ads -->
+                    <div class="eko-item eko-2">
+                        <div class="eko-circle">
+                            <div class="eko-circle-inner">
+                                <span class="icon">
+                                    <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="12" y="16" width="44" height="40" rx="4" fill="#0F0E7F" opacity="0.3" transform="translate(0, 4)"/>
+                                        <rect x="12" y="16" width="44" height="40" rx="4" fill="url(#ekoBlue)" stroke="#1D388B" stroke-width="2"/>
+                                        <line x1="12" y1="30" x2="56" y2="30" stroke="#0F0E7F" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/>
+                                        <line x1="12" y1="44" x2="56" y2="44" stroke="#0F0E7F" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4"/>
+                                        <path d="M16 48L28 34L40 40L56 16" stroke="url(#ekoGold)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <polygon points="58,12 48,16 56,24" fill="url(#ekoGold)"/>
+                                    </svg>
+                                </span>
+                                <span class="text">Meta Ads Integration</span>
+                            </div>
+                        </div>
+                        <p class="eko-desc">Boost Aset ke audiens yang tepat</p>
+                    </div>
+                    
+                    <!-- Item 3: Carousel -->
+                    <div class="eko-item eko-3">
+                        <div class="eko-circle">
+                            <div class="eko-circle-inner">
+                                <span class="icon">
+                                    <svg width="68" height="68" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="22" y="10" width="36" height="36" rx="4" fill="#0F0E7F" stroke="#1D388B" stroke-width="1" opacity="0.6"/>
+                                        <rect x="16" y="14" width="36" height="36" rx="4" fill="url(#ekoDark)" stroke="#1D388B" stroke-width="1.5"/>
+                                        <rect x="10" y="18" width="36" height="36" rx="4" fill="url(#ekoBlue)" stroke="#1D388B" stroke-width="2"/>
+                                        <circle cx="20" cy="26" r="4" fill="url(#ekoGold)"/>
+                                        <path d="M10 44L22 30L30 38L38 28L46 38V50C46 52.2091 44.2091 54 42 54H14C11.7909 54 10 52.2091 10 50V44Z" fill="url(#ekoGold)" stroke="#1D388B" stroke-width="1.5"/>
+                                    </svg>
+                                </span>
+                                <span class="text">Content-Carousel</span>
+                            </div>
+                        </div>
+                        <p class="eko-desc">Membangun Literasi dan kedalaman Informasi</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeri Karya Cinematic (Portfolio) -->
+        <section class="section portfolio" id="karya">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title text-center">Rekam Jejak Cinematic Kami</h2>
+                    <p class="section-desc text-center">Beberapa cuplikan Masterpiece AI yang telah kami produksi untuk internal dan Partner Brand kami.</p>
+                </div>
+                
+                <div class="portfolio-carousel-wrapper reveal-up delay-1">
+                    <button class="carousel-btn prev-btn" id="prevPortfolio" aria-label="Previous">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+
+                    <div class="portfolio-track" id="portfolioTrack">
+                        <!-- Video 1 -->
+                        <div class="video-card">
+                            <div class="video-frame" style="position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;">
+                                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1542204165-65bf26472b9b?auto=format&fit=crop&w=800&q=80" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                    <source src="assets/portfolio-1.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Kampanye Eksklusif: Rekam Jejak Sukses</h3>
+                                <p class="video-brand">AHA Commerce Internal</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Video 2 -->
+                        <div class="video-card">
+                            <div class="video-frame" style="position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;">
+                                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?auto=format&fit=crop&w=800&q=80" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                    <source src="assets/portfolio-2.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Peluncuran Komersial Kosmetik Premium</h3>
+                                <p class="video-brand">Klien Industri Kecantikan</p>
+                            </div>
+                        </div>
+
+                        <!-- Video 3 -->
+                        <div class="video-card">
+                            <div class="video-frame" style="position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;">
+                                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1540655037529-dec9815f5eaa?auto=format&fit=crop&w=800&q=80" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                    <source src="assets/portfolio-3.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Kisah Berdirinya Sang Pionir Nusantara</h3>
+                                <p class="video-brand">Klien Industri Kuliner (F&amp;B)</p>
+                            </div>
+                        </div>
+
+                        <!-- Video 4 -->
+                        <div class="video-card">
+                            <div class="video-frame" style="position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;">
+                                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                    <source src="assets/portfolio-4.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Profil Perusahaan Teknologi</h3>
+                                <p class="video-brand">Klien Startup B2B</p>
+                            </div>
+                        </div>
+
+                        <!-- Video 5 -->
+                        <div class="video-card">
+                            <div class="video-frame" style="position: relative; padding-bottom: 56.25%; height: 0; background-color: #000;">
+                                <video controls preload="metadata" poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=800&q=80" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                                    <source src="assets/portfolio-5.mp4" type="video/mp4">
+                                    Browser Anda tidak mendukung pemutar video.
+                                </video>
+                            </div>
+                            <div class="video-info">
+                                <h3 class="video-title">Eksplorasi Masterpiece Fashion</h3>
+                                <p class="video-brand">Klien Gaya Hidup Eksklusif</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-btn next-btn" id="nextPortfolio" aria-label="Next">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tabel Disrupsi -->
+        <section class="section disruption" id="disrupsi">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Ketinggalan Tren atau Memimpin Perubahan?</h2>
+                    <p class="section-desc">Evolusi pembuatan konten menuju penciptaan aset.</p>
+                </div>
+                
+                <div class="table-container reveal-up">
+                    <table class="compare-table">
+                        <thead>
+                            <tr>
+                                <th>Fitur Strategi</th>
+                                <th class="col-traditional">Agensi Konvensional</th>
+                                <th class="col-aha">AHA MSG AI Program</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fokus Utama</td>
+                                <td class="col-traditional">Kuantitas & Spamming Feed</td>
+                                <td class="col-aha">Kualitas Visual Masterpiece 4K</td>
+                            </tr>
+                            <tr>
+                                <td>Pendekatan</td>
+                                <td class="col-traditional">Mengejar sensasi FYP sesaat</td>
+                                <td class="col-aha">Menguasai Imajinasi dengan Narasi</td>
+                            </tr>
+                            <tr>
+                                <td>Status Aset</td>
+                                <td class="col-traditional">Konten basi sekali pakai</td>
+                                <td class="col-aha">Investasi Aset Visual Jangka Panjang</td>
+                            </tr>
+                            <tr>
+                                <td>Dampak</td>
+                                <td class="col-traditional">Atensi yang cepat hilang</td>
+                                <td class="col-aha">Loyalitas & Otoritas Brand Tinggi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- The AHA Curve & Komitmen -->
+        <section class="section curve" id="aha-curve">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title text-center">Kekuatan Sebuah Komitmen</h2>
+                </div>
+                
+                <div class="curve-split reveal-up delay-1">
+                    <div class="chart-container">
+                        <!-- SVG Chart that will be animated by JS -->
+                        <svg viewBox="0 0 800 400" preserveAspectRatio="xMidYMid meet" class="aha-curve-svg" id="curveSvg">
+                            <!-- Grid Lines -->
+                            <line x1="50" y1="350" x2="750" y2="350" stroke="#E2E8F0" stroke-width="2"/>
+                            <line x1="50" y1="50" x2="50" y2="350" stroke="#E2E8F0" stroke-width="2"/>
+                            
+                            <!-- Labels -->
+                            <text x="30" y="200" transform="rotate(-90 30,200)" fill="#0F0E7F" font-size="14" font-weight="600" text-anchor="middle">Tingkat Kepercayaan</text>
+                            
+                            <!-- Week Markers -->
+                            <text x="150" y="365" fill="#64748B" font-size="12" text-anchor="middle">2</text>
+                            <text x="250" y="365" fill="#64748B" font-size="12" text-anchor="middle">4</text>
+                            <text x="350" y="365" fill="#64748B" font-size="12" text-anchor="middle">6</text>
+                            <text x="450" y="365" fill="#64748B" font-size="12" text-anchor="middle">8</text>
+                            <text x="550" y="365" fill="#64748B" font-size="12" text-anchor="middle">10</text>
+                            <text x="650" y="365" fill="#64748B" font-size="12" text-anchor="middle">12</text>
+                            <text x="350" y="385" fill="#0F0E7F" font-size="14" font-weight="800" text-anchor="middle">Waktu (Minggu)</text>
+                            
+                            <!-- Path: Viral Sesaat (Red/Grey) -->
+                            <path id="pathViral" d="M 50 350 C 70 50, 150 50, 160 340 L 650 340" fill="none" class="path-viral" stroke="#94A3B8" stroke-width="3" stroke-dasharray="8,8" />
+                            <text x="550" y="325" fill="#64748B" font-size="16" font-weight="600" text-anchor="middle">Viral Sesaat</text>
+                            
+                            <!-- Path: Narasi Episodik (AHA Curve - Blue Gradient) -->
+                              <path id="pathAHA" d="M 50 350 C 160 300, 350 250, 650 50" fill="none" class="path-aha" stroke="url(#ahaGradient)" stroke-width="6" stroke-linecap="round" filter="url(#goldGlow)"/>
+                              <circle cx="650" cy="50" r="10" fill="#FACC15" class="aha-curve-dot" filter="url(#goldGlow)" />
+                              <circle cx="650" cy="50" r="4" fill="#FFFFFF" />
+                              <text x="500" y="90" fill="#1D388B" font-size="20" font-weight="800" text-anchor="middle">AHA Curve</text>
+  
+                              <!-- Gradient Def -->
+                              <defs>
+                                  <linearGradient id="ahaGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                      <stop offset="0%" stop-color="#FACC15" />
+                                      <stop offset="100%" stop-color="#D97706" />
+                                  </linearGradient>
+                                  <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                                      <feDropShadow dx="0" dy="12" stdDeviation="15" flood-color="#D97706" flood-opacity="0.4"/>
+                                      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#FACC15" flood-opacity="0.5"/>
+                                  </filter>
+                              </defs>
+                        </svg>
+                    </div>
+                    
+                    <div class="commitment-box">
+                        <h3 class="komitmen-title">Mengapa komitmen minimal 1 Season (3 Bulan)?</h3>
+                        <p class="komitmen-desc">Narasi yang kuat memerlukan <strong>waktu minimal 12 minggu</strong> untuk matang. Episodik memfasilitasi hubungan emosional yang mengakar, mengubah audiens menjadi loyalitas.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Keistimewaan AHA MSG (Brand Benefits) -->
+        <section class="section benefits bg-navy" id="benefits">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Keistimewaan Menjadi Partner AHA MSG</h2>
+                    <p class="section-desc">Empat pilar nilai strategis yang mengubah cara Brand Anda mendominasi industri.</p>
+                </div>
+                
+                <div class="benefits-grid reveal-up delay-1">
+                    <!-- Benefit 1 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="28" fill="url(#blueGradDark)" stroke="#1D388B" stroke-width="2"/>
+                                <path d="M16 32 C16 20, 32 16, 32 32" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M32 32 C32 48, 48 44, 48 32 C48 20, 32 16, 32 32 Z" stroke="url(#goldGrad)" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="32" cy="32" r="6" fill="#F8FAFC"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Aset Seumur Hidup</h3>
+                        <p class="benefit-desc">Bukan sekadar *post* numpang lewat. Kualitas 4K *Cinematic* ini murni menjadi warisan visual eksklusif yang bisa Anda gunakan selamanya di mana pun.</p>
+                    </div>
+
+                    <!-- Benefit 2 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="12" y="12" width="40" height="40" rx="8" fill="url(#blueGradLight)" stroke="#1D388B" stroke-width="2"/>
+                                <path d="M32 20 L38 32 L48 32 L40 40 L42 50 L32 44 L22 50 L24 40 L16 32 L26 32 L32 20 Z" fill="url(#goldGrad)" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Loyalitas Mengakar</h3>
+                        <p class="benefit-desc">Format cerita bersambung mencekik rasa penasaran penonton, menyuntikkan ikatan emosional *tanpa sadar* yang menekan rasio *churn*.</p>
+                    </div>
+
+                    <!-- Benefit 3 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="28" fill="url(#blueGradDark)" stroke="#1D388B" stroke-width="2"/>
+                                <path d="M16 40 L28 28 L36 36 L48 20" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M48 20 L48 30 M48 20 L38 20" stroke="url(#goldGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="48" cy="20" r="4" fill="#F8FAFC"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Efisiensi Biaya Iklan</h3>
+                        <p class="benefit-desc">Kualitas visual premium memancing matriks *engagement* maksimal. Algoritma Meta Ads akan mendistribusikannya dengan *Cost Per Result* minimum.</p>
+                    </div>
+
+                    <!-- Benefit 4 -->
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="48" height="48" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8 24 L32 12 L56 24 L56 46 C56 50, 52 54, 48 54 L16 54 C12 54, 8 50, 8 46 Z" fill="url(#blueGradLight)" stroke="#1D388B" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M32 12 V54" stroke="#1D388B" stroke-width="2"/>
+                                <circle cx="32" cy="36" r="8" fill="url(#goldGrad)"/>
+                                <path d="M30 32 L36 36 L30 40 Z" fill="#F8FAFC" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="benefit-title">Produksi 'Terima Beres'</h3>
+                        <p class="benefit-desc">Duduk manis dan bersiap tayang. Mulai dari penentuan Brand Story, aktor, syuting 4K, hingga tata letak Meta Ads, tim spesialis kami mengurus A sampai Z secara penuh.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Strategi Harga -->
+        <section class="section pricing bg-navy" id="harga">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Nilai Investasi Sebuah Masterpiece</h2>
+                </div>
+                
+                <div class="pricing-grid reveal-up delay-1">
+                    <!-- Standard Plan -->
+                    <div class="pricing-card">
+                        <h3 class="tier-name">Monthly Starter</h3>
+                        <div class="price">
+                            <span class="currency">Rp.</span><span class="amount">15.000.000</span><span class="period">/Bulan</span>
+                        </div>
+                        <p class="price-sub">(Total 3 Bulan: Rp. 45.000.000)</p>
+                        <hr class="price-divider">
+                        <ul class="features">
+                            <li>Output: 2 Video + 2 Carousel (Per Bulan)</li>
+                            <li>Kualitas Ultra AI 4K</li>
+                            <li>Free Meta Ads Boots & Management</li>
+                            <li>Bayar Bulanan</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Premium Plan -->
+                    <div class="pricing-card premium-card">
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon">Rekomendasi Utama: The Full Season Bundling</div>
+                        </div>
+                        <h3 class="tier-name">Full Season BUNDLING</h3>
+                        <div class="price">
+                            <span class="currency">Rp.</span><span class="amount">39.999.999</span>
+                        </div>
+                        <p class="price-sub">(Bayar di Muka untuk 1 Season / 3 Bulan)</p>
+                        <hr class="price-divider">
+                        <ul class="features">
+                            <li>Output: 6 Video + 6 Carousel (Selesai dalam 1 Season)</li>
+                            <li>Kualitas Ultra AI 4K</li>
+                            <li>Free Meta Ads Boots & Management</li>
+                        </ul>
+                        <div class="save-banner">
+                            Hemat Rp. 5.000.001 dengan komitmen penuh 1 Season.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ekslusivitas & Garansi -->
+        <section class="section guarantee" id="garansi">
+            <video autoplay loop muted playsinline class="guarantee-bg-video">
+                <source src="assets/hero2.mp4" type="video/mp4">
+            </video>
+            <div class="guarantee-overlay"></div>
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Ekslusivitas & Garansi</h2>
+                </div>
+                
+                <div class="guarantee-grid reveal-up delay-1">
+                    <!-- Left Card: Kapasitas Optimal -->
+                    <div class="guarantee-card capacity-card">
+                          <p class="capacity-desc text-center">Menciptakan sebuah Cinematic Masterpiece menuntut dedikasi waktu, pendalaman cerita, dan fokus produksi yang sangat komprehensif.<br><br><strong>Oleh karena itu, kami memberikan pendampingan eksklusif secara penuh hanya untuk 2 Brand Partner setiap bulannya.</strong></p>
+                        
+                        <div class="capacity-boxes">
+                            <div class="cap-box check">
+                                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="capGold" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FACC15"/><stop offset="1" stop-color="#D97706"/>
+                                        </linearGradient>
+                                        <linearGradient id="capBlue" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#325FEC"/><stop offset="1" stop-color="#1D388B"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="20" cy="20" r="18" fill="url(#capBlue)" stroke="url(#capGold)" stroke-width="1.5"/>
+                                    <path d="M12 21L17 26L28 14" stroke="#F8FAFC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="28" cy="12" r="1.5" fill="#FACC15"/>
+                                </svg>
+                            </div>
+                            <div class="cap-box check">
+                                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="20" cy="20" r="18" fill="url(#capBlue)" stroke="url(#capGold)" stroke-width="1.5"/>
+                                    <path d="M12 21L17 26L28 14" stroke="#F8FAFC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="28" cy="12" r="1.5" fill="#FACC15"/>
+                                </svg>
+                            </div>
+                            <div class="cap-box cross">
+                                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="capGrey" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#94A3B8"/><stop offset="1" stop-color="#475569"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="20" cy="20" r="18" fill="#F1F5F9" stroke="url(#capGrey)" stroke-width="1.5"/>
+                                    <path d="M14 14L26 26" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M26 14L14 26" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                            <div class="cap-box cross">
+                                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="20" cy="20" r="18" fill="#F1F5F9" stroke="url(#capGrey)" stroke-width="1.5"/>
+                                    <path d="M14 14L26 26" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"/>
+                                    <path d="M26 14L14 26" stroke="#64748B" stroke-width="2.5" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Card: Guarantee -->
+                    <div class="guarantee-card guarantee-badge-card">
+                        <div class="badge-header">
+                            <div class="badge-svg">
+                                <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="premium-badge-svg">
+                                    <defs>
+                                        <linearGradient id="shieldGold" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#FACC15"/><stop offset="1" stop-color="#B45309"/>
+                                        </linearGradient>
+                                        <linearGradient id="shieldBlue" x1="0" y1="0" x2="160" y2="160" gradientUnits="userSpaceOnUse">
+                                            <stop stop-color="#325FEC"/><stop offset="1" stop-color="#1D388B"/>
+                                        </linearGradient>
+                                        <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                                            <stop stop-color="#FACC15" stop-opacity="0.5"/><stop offset="1" stop-color="#FACC15" stop-opacity="0"/>
+                                        </radialGradient>
+                                        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#1D388B" flood-opacity="0.6"/>
+                                        </filter>
+                                        <filter id="glow-filter" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="3" result="blur" />
+                                            <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                                        </filter>
+                                        <clipPath id="shieldClip">
+                                            <path d="M80 20C120 20 136 36 136 36V80C136 116 100 144 80 152C60 144 24 116 24 80V36C24 36 40 20 80 20Z"/>
+                                        </clipPath>
+                                    </defs>
+                                    
+                                    <!-- Starburst Halo -->
+                                    <g class="spin-slow">
+                                        <circle cx="80" cy="80" r="70" fill="url(#glow)"/>
+                                        <path d="M80 0L85 65L145 25L100 75L160 80L100 85L145 135L85 95L80 160L75 95L15 135L60 85L0 80L60 75L15 25L75 65Z" fill="#FACC15" opacity="0.3"/>
+                                    </g>
+
+                                    <!-- Outer Gold Shield -->
+                                    <path d="M80 20C120 20 136 36 136 36V80C136 116 100 144 80 152C60 144 24 116 24 80V36C24 36 40 20 80 20Z" fill="url(#shieldGold)" filter="url(#shadow)"/>
+                                    
+                                    <!-- Inner Blue Shield -->
+                                      <path d="M80 28C110 28 126 42 126 42V80C126 108 94 134 80 142C66 134 34 108 34 80V42C34 42 50 28 80 28Z" fill="url(#shieldBlue)" stroke="#FACC15" stroke-opacity="0.4" stroke-width="2" filter="url(#shadow)"/>
+  
+                                      <!-- Center Monogram -->
+                                      <text x="80" y="82" font-family="'Manrope', sans-serif" font-weight="800" font-size="28" fill="url(#shieldGold)" filter="url(#shadow)" text-anchor="middle" letter-spacing="2">MSG</text>
+
+                                      <!-- Left highlight (3D edge matching shieldClip) -->
+                                      <path d="M80 20C60 20 24 36 24 36V80C24 116 60 144 80 152H80.5C62.5 144 26 116 26 80V36C26 36 62 20 80.5 20H80Z" fill="#FFFFFF" opacity="0.5"/>
+                                    <path d="M80 28C66 28 34 42 34 42V80C34 108 66 134 80 142H80.5C68.5 134 36 108 36 80V42C36 42 68 28 80.5 28H80Z" fill="#FFFFFF" opacity="0.2"/>
+
+                                    <!-- Front Gold Ribbon Overlay -->
+                                    <path d="M10 95H150L135 115H25L10 95Z" fill="url(#shieldGold)" filter="url(#shadow)"/>
+                                    <path d="M25 115L34 100V115H25Z" fill="#B45309"/>
+                                    <path d="M135 115L126 100V115H135Z" fill="#B45309"/>
+
+
+                                    <!-- Ribbon Text Engraving -->
+                                    <text x="80" y="110" font-family="'Manrope', sans-serif" font-weight="800" font-size="12" fill="#1D388B" text-anchor="middle" letter-spacing="1.5">EXCELLENCE</text>
+                                </svg>
+                            </div>
+                            <h3 class="badge-title">AHA Content<br>Excellence<br>Guarantee</h3>
+                        </div>
+                          <ul class="guarantee-list">
+                              <li>Menjamin Visual AI 4K bebas distorsi</li>
+                              <li>100% Hak cipta eksklusif menjadi milik mutlak brand sepenuhnya</li>
+                              <li>Memastikan setiap aset visual selaras dengan identitas Anda</li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engagement Banner (Pre-FAQ) -->
+        <section class="section pre-faq-banner">
+            <div class="container">
+                <div class="engagement-strip reveal-up">
+                    <div class="strip-image"></div>
+                    <div class="strip-content">
+                        <h2>Berhenti<br>Menyewa<br>Atensi</h2>
+                        <p>Mulailah Membangun Aset<br>Visual Jangka Panjang</p>
+                        <a href="#komitmen" class="btn btn-primary pulse-shadow mt-4" style="margin-top: 30px;">Amankan Kuota Konsultasi Gratis</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pertanyaan yang Sering Diajukan (FAQ) -->
+        <section class="section faq" id="faq">
+            <div class="container">
+                <div class="section-header reveal-up">
+                    <h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+                </div>
+                
+                <div class="faq-container reveal-up delay-1">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Apa itu Cinematic Masterpiece AI 4K?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Cinematic Masterpiece AI 4K adalah standard pembuatan video sinematik khusus dari AHA MSG, memadukan arahan artistik profesional dengan peningkatan kualitas dan efek melalui Artificial Intelligence beresolusi 4K untuk mencapai standar visual tertinggi.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Bagaimana proses kerjanya?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Proses kami dimulai dari penemuan narasi brand (Storytelling), penyusunan storyboard eksklusif, proses produksi dan peningkatan AI (Memorable), hingga amplifikasi strategi untuk ROI (Growth).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Apakah saya bisa memilih topik?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Tentu. Kami akan berkolaborasi dengan tim Anda untuk mengunci topik atau pesan utama (Core Message) yang ingin ditanamkan ke dalam ingatan jangka panjang audiens Anda.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Pertanyaan lainnya tentang program ini?</span>
+                            <span class="icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Jika Anda memiliki pertanyaan spesifik mengenai kapasitas, harga, atau timeline, silakan ajukan pada sesi Konsultasi Strategi Visual Gratis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Sticky Capacity Tracker & Ownership Footer -->
+    <div class="sticky-footer">
+        <div class="container sticky-container">
+            <div class="capacity-tracker hide-mobile">
+                <span class="pulse-dot"></span>
+                <strong>Eksklusivitas:</strong> Kami membatasi 2 Partner Brand / Bulan.
+                <div class="progress-bar-container">
+                    <div class="progress-bar" style="width: 50%;"></div>
+                </div>
+                <span class="spots-left">1 Slot Tersisa Bulan Ini</span>
+            </div>
+            <div class="ownership-guarantee">
+                <span class="icon">ðŸ”’</span>
+                <strong>100% Hak Cipta Milik Anda.</strong> Investasi aset visual seumur hidup.
+            </div>
+            <a href="#konsultasi" class="btn btn-primary btn-sm mobile-grow">Kunci Slot Anda</a>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Smooth Scrolling for Anchor Links ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 40; // 40px offset
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Scroll Reveal Animations (Intersection Observer) ---
+    const revealElements = document.querySelectorAll('.reveal-text, .reveal-up, .reveal-left, .reveal-right');
+    
+    const revealOptions = {
+        threshold: 0.15, // Trigger when 15% of the element is visible
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+                // Optional: stop observing once revealed
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, revealOptions);
+
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    // --- The AHA Curve SVG Animation Trigger ---
+    const ahaCurvePath = document.querySelector('.path-aha');
+    const curveSection = document.querySelector('.chart-container');
+    
+    if (ahaCurvePath && curveSection) {
+        const curveObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    ahaCurvePath.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        curveObserver.observe(curveSection);
+    }
+
+    // --- Sticky Footer Visibility ---
+    // Show sticky footer only after scrolling past the hero section
+    const stickyFooter = document.querySelector('.sticky-footer');
+    const heroSection = document.querySelector('.hero');
+    
+    if (stickyFooter && heroSection) {
+        const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                // If hero is NOT intersecting (meaning we scrolled past it)
+                if (!entry.isIntersecting) {
+                    stickyFooter.classList.add('visible');
+                } else {
+                    stickyFooter.classList.remove('visible');
+                }
+            });
+        }, { 
+            root: null,
+            threshold: 0,
+            rootMargin: "-100px 0px 0px 0px" // give a little buffer
+        });
+        
+        footerObserver.observe(heroSection);
+        // Fallback check on load in case loaded midway down page
+        if (window.scrollY > window.innerHeight) {
+             stickyFooter.classList.add('visible');
+        }
+    }
+
+    // --- FAQ Accordion Logic ---
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all other items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+
+    // Portfolio Carousel Logic
+    const portfolioTrack = document.getElementById('portfolioTrack');
+    const btnPrev = document.getElementById('prevPortfolio');
+    const btnNext = document.getElementById('nextPortfolio');
+
+    if (portfolioTrack && btnPrev && btnNext) {
+        btnNext.addEventListener('click', () => {
+            const cardWidth = portfolioTrack.querySelector('.video-card').offsetWidth + 30; // Termasuk gap
+            portfolioTrack.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        });
+        
+        btnPrev.addEventListener('click', () => {
+            const cardWidth = portfolioTrack.querySelector('.video-card').offsetWidth + 30;
+            portfolioTrack.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        });
+    }
+});
+
+</script>
